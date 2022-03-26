@@ -33,4 +33,4 @@ jobs:
         uses: actions/upload-artifact@v3.0.0
         with:
           name: makeBrrr.app
-          path: ~/deploy-archive.xcarchive/Products/Applications/makeBrrr.app
+          path: ~/deploy-archive.xcarchive/Products/Applications/
