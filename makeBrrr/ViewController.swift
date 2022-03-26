@@ -19,7 +19,7 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-    @IBAction func makeBrrr(segue: NSStoryboardSegue) {
+    @IBAction func makeBrrr(_ sender: Any?) {
         Thread.detachNewThread {
             var j = 0;
             switch Int.random(in: 0...6) {
@@ -29,21 +29,20 @@ class ViewController: NSViewController {
             }
             let vibr = NSHapticFeedbackManager.defaultPerformer
             for _ in 0...j {
-                vibr.perform(NSHapticFeedbackManager.FeedbackPattern.generic, performanceTime:  NSHapticFeedbackManager.PerformanceTime.now)
+                vibr.perform(.generic, performanceTime: .now)
                 Thread.sleep(forTimeInterval: 0.02)
             }
         }
-        performSegue(withIdentifier: "showCat", sender: self)
+        performSegue(withIdentifier: "showCat", sender: nil)
     }
-    @IBAction func makeBrrrv2(segue: NSStoryboardSegue) {
+    @IBAction func makeBrrrv2(_ sender: NSButton) {
         Thread.detachNewThread {
             let vibr = NSHapticFeedbackManager.defaultPerformer
-            for _ in 0...50 {
-                vibr.perform(NSHapticFeedbackManager.FeedbackPattern.generic, performanceTime:     NSHapticFeedbackManager.PerformanceTime.now)
-                Thread.sleep(forTimeInterval: 0.05)
-            }
+            vibr.perform(.levelChange, performanceTime: .now)
         }
-        performSegue(withIdentifier: "showCat", sender: self)
+        if sender.doubleValue == 0 {
+            performSegue(withIdentifier: "showCat", sender: nil)
+        }
     }
 }
 

@@ -770,18 +770,18 @@
                                         </buttonCell>
                                         <color key="contentTintColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
                                         <connections>
-                                            <action selector="makeBrrrWithSegue:" target="XfG-lQ-9wD" id="4Da-Dh-ebs"/>
+                                            <action selector="makeBrrr:" target="XfG-lQ-9wD" id="fqr-gT-a7z"/>
                                         </connections>
                                     </button>
                                     <button identifier="secondButton" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yUJ-xc-P6B">
                                         <rect key="frame" x="43" y="-7" width="231" height="32"/>
                                         <buttonCell key="cell" type="push" title="абсолютно нормальная кнопка" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="md7-nf-Yfk">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES" accelerator="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <color key="contentTintColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                                         <connections>
-                                            <action selector="makeBrrrv2WithSegue:" target="XfG-lQ-9wD" id="3bz-0W-st1"/>
+                                            <action selector="makeBrrrv2:" target="XfG-lQ-9wD" id="Hrt-tV-e7q"/>
                                         </connections>
                                     </button>
                                 </subviews>
