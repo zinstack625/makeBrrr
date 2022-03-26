@@ -23,11 +23,12 @@ jobs:
       - name: Build
         env:
           scheme: ${{ 'default' }}
+          ARCHS: (arm64 x86_64)
         run: |
           if [ $scheme = default ]; then scheme=$(cat default); fi
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-          xcodebuild clean build analyze archive -configuration Release -destination "Any Mac" -archivePath ~/deploy-archive -scheme "$scheme" -"$filetype_parameter" "$file_to_build" | xcpretty && exit ${PIPESTATUS[0]}
+          xcodebuild clean build analyze archive -configuration Release -archivePath ~/deploy-archive -scheme "$scheme" -"$filetype_parameter" "$file_to_build" | xcpretty && exit ${PIPESTATUS[0]}
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.0.0
         with:
