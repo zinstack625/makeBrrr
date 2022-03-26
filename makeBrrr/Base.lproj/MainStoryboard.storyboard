@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="20037"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="makeBrrr" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -700,18 +701,129 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
+        <!--Window Controller-->
+        <scene sceneID="vZt-sk-Rh6">
+            <objects>
+                <windowController id="eWq-Wu-pTx" sceneMemberID="viewController">
+                    <window key="window" identifier="catWindow" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="GpU-Fk-0eb">
+                        <windowStyleMask key="styleMask" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="245" y="311" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
+                        <view key="contentView" id="nda-0R-iVY">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </view>
+                        <connections>
+                            <outlet property="delegate" destination="eWq-Wu-pTx" id="3l2-UL-DIS"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="Wei-WP-vEG" kind="relationship" relationship="window.shadowedContentViewController" id="pwu-sc-6iT"/>
+                    </connections>
+                </windowController>
+                <customObject id="1rR-8R-myy" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="697" y="196"/>
+        </scene>
+        <!--Cat Controller-->
+        <scene sceneID="nQv-Ai-Mff">
+            <objects>
+                <viewController id="Wei-WP-vEG" customClass="CatController" customModule="makeBrrr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="vag-yB-dVg">
+                        <rect key="frame" x="0.0" y="0.0" width="507" height="500"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YLb-Ou-ee0">
+                                <rect key="frame" x="0.0" y="0.0" width="507" height="500"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="cat" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="gJK-kh-ryM">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="catDead:" target="Wei-WP-vEG" id="sUg-Ip-s9L"/>
+                                    </connections>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="rX5-t1-wdJ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="697.5" y="776"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="makeBrrr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="396" height="148"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wyY-71-1TM">
+                                <rect key="frame" x="0.0" y="50" width="396" height="48"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Tk8-gT-Zka">
+                                        <rect key="frame" x="43" y="21" width="231" height="32"/>
+                                        <buttonCell key="cell" type="push" title="абсолютно нормальная кнопка" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="w9Z-qj-lYc">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <color key="contentTintColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                                        <connections>
+                                            <action selector="makeBrrrWithSegue:" target="XfG-lQ-9wD" id="4Da-Dh-ebs"/>
+                                        </connections>
+                                    </button>
+                                    <button identifier="secondButton" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yUJ-xc-P6B">
+                                        <rect key="frame" x="43" y="-7" width="231" height="32"/>
+                                        <buttonCell key="cell" type="push" title="абсолютно нормальная кнопка" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="md7-nf-Yfk">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <color key="contentTintColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                        <connections>
+                                            <action selector="makeBrrrv2WithSegue:" target="XfG-lQ-9wD" id="3bz-0W-st1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <edgeInsets key="edgeInsets" left="50" right="0.0" top="0.0" bottom="0.0"/>
+                                <constraints>
+                                    <constraint firstItem="Tk8-gT-Zka" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="yUJ-xc-P6B" secondAttribute="top" constant="50" id="78c-Tp-GtG"/>
+                                    <constraint firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yUJ-xc-P6B" secondAttribute="leading" constant="-50" id="FfO-A0-w4d"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Tk8-gT-Zka" secondAttribute="trailing" id="ama-jD-UAj"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="wyY-71-1TM" secondAttribute="bottom" constant="50" id="9gp-xW-Yut"/>
+                            <constraint firstItem="wyY-71-1TM" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="QDX-xg-DIw"/>
+                            <constraint firstAttribute="trailing" secondItem="wyY-71-1TM" secondAttribute="trailing" id="bRb-Nb-StR"/>
+                            <constraint firstItem="wyY-71-1TM" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="50" id="bZn-F0-cFh"/>
+                            <constraint firstItem="wyY-71-1TM" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="gqK-6W-pdb"/>
+                            <constraint firstItem="wyY-71-1TM" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="k3W-LI-RJw"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <segue destination="eWq-Wu-pTx" kind="show" identifier="showCat" destinationCreationSelector="brr:sender:" id="pgF-3v-1yg"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="0QR-KK-ybD"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="669"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cat" width="512" height="512"/>
+    </resources>
 </document>

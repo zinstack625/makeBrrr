@@ -10,7 +10,8 @@
 		3A356E4527EE281F00A9EAD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A356E4427EE281F00A9EAD0 /* AppDelegate.swift */; };
 		3A356E4727EE281F00A9EAD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A356E4627EE281F00A9EAD0 /* ViewController.swift */; };
 		3A356E4927EE281F00A9EAD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A356E4827EE281F00A9EAD0 /* Assets.xcassets */; };
-		3A356E4C27EE281F00A9EAD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A356E4A27EE281F00A9EAD0 /* Main.storyboard */; };
+		3A356E4C27EE281F00A9EAD0 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A356E4A27EE281F00A9EAD0 /* MainStoryboard.storyboard */; };
+		3A356E5C27EE948700A9EAD0 /* CatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A356E5B27EE948700A9EAD0 /* CatController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,8 +19,9 @@
 		3A356E4427EE281F00A9EAD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A356E4627EE281F00A9EAD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3A356E4827EE281F00A9EAD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3A356E4B27EE281F00A9EAD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3A356E4B27EE281F00A9EAD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		3A356E4D27EE281F00A9EAD0 /* makeBrrr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = makeBrrr.entitlements; sourceTree = "<group>"; };
+		3A356E5B27EE948700A9EAD0 /* CatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +57,8 @@
 				3A356E4427EE281F00A9EAD0 /* AppDelegate.swift */,
 				3A356E4627EE281F00A9EAD0 /* ViewController.swift */,
 				3A356E4827EE281F00A9EAD0 /* Assets.xcassets */,
-				3A356E4A27EE281F00A9EAD0 /* Main.storyboard */,
+				3A356E4A27EE281F00A9EAD0 /* MainStoryboard.storyboard */,
+				3A356E5B27EE948700A9EAD0 /* CatController.swift */,
 				3A356E4D27EE281F00A9EAD0 /* makeBrrr.entitlements */,
 			);
 			path = makeBrrr;
@@ -120,7 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A356E4927EE281F00A9EAD0 /* Assets.xcassets in Resources */,
-				3A356E4C27EE281F00A9EAD0 /* Main.storyboard in Resources */,
+				3A356E4C27EE281F00A9EAD0 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A356E4727EE281F00A9EAD0 /* ViewController.swift in Sources */,
+				3A356E5C27EE948700A9EAD0 /* CatController.swift in Sources */,
 				3A356E4527EE281F00A9EAD0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,12 +143,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3A356E4A27EE281F00A9EAD0 /* Main.storyboard */ = {
+		3A356E4A27EE281F00A9EAD0 /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3A356E4B27EE281F00A9EAD0 /* Base */,
 			);
-			name = Main.storyboard;
+			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -268,13 +272,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				ASSETCATALOG_COMPILER_SKIP_APP_STORE_DEPLOYMENT = YES;
 				CODE_SIGN_ENTITLEMENTS = makeBrrr/makeBrrr.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSMainStoryboardFile = MainStoryboard;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -293,13 +301,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				ASSETCATALOG_COMPILER_SKIP_APP_STORE_DEPLOYMENT = YES;
 				CODE_SIGN_ENTITLEMENTS = makeBrrr/makeBrrr.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSMainStoryboardFile = MainStoryboard;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
